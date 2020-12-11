@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" -->
+<!--       layout:decorate="~{/home/layout}"> -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Users</title>
+
+</head>
+<body>
+<!-- <div layout:fragment="content"> -->
+
+<div class="w3-container w3-teal">
+<h3>Users</h3>
+</div>
+
+<table class="w3-table-all w3-hoverable">
+<thead>
+<tr >
+<th>Name</th>
+<th>Country</th>
+<th>Date of birth</th>
+<th>is Uni Stud?</th>
+<th>Institution</th>
+
+</tr>
+</thead>
+<tr th:each="stud:${users}">
+<td th:text="${stud.name}"></td>
+<td th:text="${stud.countryoforigin}"></td>
+<td th:text="${stud.dateofbirth}"></td>
+<td th:text="${stud.isuniversitystudent}"></td>
+<td th:text="${stud.eduinstitution}"></td>
+<!-- <td th:text="${stud.card.id}"></td> -->
+<!-- <td th:text="${stud.card.frontphoto}"></td> -->
+<!-- <td th:text="${stud.card.color}"></td> -->
+<td><a th:href="@{deleteUser(id=${stud.id})}">DELETE</a></td>
+
+</tr>
+</table>
+<form action="newUser">
+<p>
+<button >Add User</button>
+</p>
+
+
+</form>
+
+
+<!-- </div> -->
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" -->
+<!--       layout:decorate="~{/home/layout}"> -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+<head>
+<meta charset="ISO-8859-1">
+<title>Library</title>
+</head>
+
+<div class="w3-container w3-teal">
+<h3>Books list</h3>
+</div>
+
+<table>
+	<tr>
+		<td>Session id:</td>
+		<td th:text="${session.sid}"></td>
+	</tr>
+	<tr>
+		<td>User:</td>
+		<td
+			th:text="${session.user.name}"></td>
+	</tr>
+	<tr>
+			<td>Status:</td>
+			<td
+				th:text="${session.status}"></td>
+		</tr>
+</table>
+<Br>
+
+
+<table class="w3-table-all w3-hoverable">
+<thead>
+
+<tr>
+<th>Book Id</th>
+<th>Title</th>
+<th>Isbn</th>
+<th>Number of Pages</th>
+</tr>
+
+</thead>
+	<tr th:each="item:${books}">
+<!-- 		<tr th:each="item:${items}"> -->
+		<td th:text="${item.id}"></td>
+		<td th:text="${item.title}"></td>
+		<td th:text="${item.isbn}"></td>
+		<td th:text="${item.numberpages}"></td>
+		
+<!-- 		<td><a th:href="@{/products/modifyItem(itemId=${item.id})}">Modify Item</a></td> -->
+<!-- 		<td><a th:href="@{/products/detail(itemId=${item.id})}">Detail Product</a></td> -->
+		<td><a th:href="@{/carts/addToCart(itemId=${item.id})}">Add to Cart</a></td>
+<!-- 		<td><a th:href="@{/carts/removeFromCart(itemId=${item.id})}">Remove from Book Cart</a></td> -->
+	</tr>
+
+</table>
+		<a th:href="@{/carts/show}">Book Cart</a>
+</html>

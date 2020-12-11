@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" -->
+<!--       layout:decorate="~{/home/layout}"> -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Cart</title>
+</head>
+<body>
+
+<div class="w3-container w3-teal">
+<h3>Confirmed Reservation</h3>
+</div>
+
+<table>
+
+<tr>
+	<td>Session id:</td>
+<!-- 	<td th:text="${session.sid}"> -->
+	<td th:text="${sid}">
+<!-- 	</td> -->
+</tr>
+
+<tr>
+	<td>User:</td>
+	<td th:text="${user.name}"></td>
+</tr>
+<tr>
+	<td>Status:</td>
+<!-- 	<td th:text="${session.status}"></td> -->
+		<td th:text="${status}"></td>
+	
+</tr>
+
+<tr>
+	<td>httpSession object session is invalidated</td>
+</tr>
+</table>
+<br>
+<table>
+
+
+</table>
+<a th:href="@{/}">Home</a>
+</body>
+</html>

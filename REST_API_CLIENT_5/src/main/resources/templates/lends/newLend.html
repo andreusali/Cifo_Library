@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Create new Reservation</title>
+</head>
+
+<h3>New Reservation</h3>
+<form action="insertLend" th:object="${lend}" method="post" th:required="required">
+
+<p>
+	<label for="studentlist">User</label>
+<select id="studentlist" th:field="*{user.id}">
+			<option th:each="stu: ${users}" th:value="${stu.id}" 
+			th:text="'User Id:' + ${stu.id}+' - User Name:'+${stu.name}"></option>
+</select>
+</p>
+
+
+
+<!-- <p> -->
+<!-- <label for="lendlist">LendBook</label> -->
+<!-- <select id="lendlist" th:field="*{lendbook.lendbookid}"> -->
+<!-- 	<option th:value="0">Choose lendbook</option> -->
+<!-- 	<option th:each="lendboo: ${lendboo}" th:value="${lendboo.lendbookid}" th:text="${lendboo.lendbook}"></option> -->
+<!-- </select> -->
+<!-- </p> -->
+
+
+<p>
+<button >Add Reservation</button>
+</p>
+</form>
+
+</body>
+</html>

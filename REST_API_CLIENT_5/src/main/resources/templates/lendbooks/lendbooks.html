@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Lends</title>
+</head>
+
+<h3>Lends</h3>
+<table>
+
+<tr >
+<th>Id</th>
+<th>Date Begin</th>
+<th>Date Finish</th>
+<th>Status</th>
+</tr>
+<!-- </thead> -->
+<tr th:each="lendbook:${lendbooks}">
+<td th:text="${lendbook.id}"></td>
+<td th:text="${lendbook.datebegin}"></td>
+<td th:text="${lendbook.datefinish}"></td>
+<td th:text="${lendbook.status}"></td>
+
+<td><a th:href="@{deleteLendbook(id=${lendbook.id})}" >DELETE</a></td>
+
+</tr>
+</table>
+<form action="newLendbook">
+<p>
+<button >Add Lendbook</button>
+</p>
+</form>
+
+
+</body>
+</html>

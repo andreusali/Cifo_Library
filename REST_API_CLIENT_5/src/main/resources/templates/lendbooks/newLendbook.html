@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Create new Lend</title>
+</head>
+
+<h3>Lends</h3>
+<form action="insertLendbook" th:object="${lendbook}" method="post" th:required="required">
+
+
+<p>
+<label for="lendlist">Reservation</label>
+<select id="lendlist" th:field="*{lend.id}">
+	<option th:value="0">Choose Reservation</option>
+	<option th:each="lend: ${lends}" th:value="${lend.id}" th:text="${lend.id}"></option>
+</select>
+</p>
+
+
+<p>
+	<label for="booklist">Book</label>
+<select id="booklist" th:field="*{book.id}">
+			<option th:each="public: ${books}" th:value="${public.id}" th:text="${public.title}"></option>
+</select>
+</p>
+
+<p>
+<label ><b>Date Begin</b></label>
+
+<input name="datebegin" type="text">
+</p>
+<p>
+<label ><b>Date Finish</b></label>
+<input  name="datefinish" type="text">
+</p>
+<p>
+
+<label ><b>Status</b></label>
+<select id="statuslist" name="status">
+	    <option value="lent">lent</option>
+	    <option value="free to lend">given back</option>
+	    <option value="finish date passed">finish date passed</option>
+</select>
+
+
+
+
+
+<p>
+<button >Add</button>
+</p>
+</form>
+
+</body>
+</html>

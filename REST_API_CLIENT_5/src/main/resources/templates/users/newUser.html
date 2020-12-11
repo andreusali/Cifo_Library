@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" -->
+<!--       layout:decorate="~{/home/layout}"> -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Create new User</title>
+</head>
+
+<body>
+<!-- <div layout:fragment="content"> -->
+<div class="w3-container w3-teal">
+<h3>New User</h3>
+</div>
+
+<form class="w3-container w3-card-4 w3-light-grey" action="insertUser" th:object="${user}" method="post" th:required="required">
+
+<p> 
+<label ><b>Name</b></label>
+<input class="w3-input w3-border w3-round" name="name" type="text">
+</p>
+
+<p>
+<label ><b>Country</b></label>
+<input class="w3-input w3-border w3-round" name="countryoforigin" type="text">
+</p>
+
+<p>
+<label ><b>Date of birth</b></label>
+<input class="w3-input w3-border w3-round" name="dateofbirth" type="text">
+</p>
+
+
+
+<p>
+<label ><b>is Uni Student?</b></label>
+<select id="percentage" name="isuniversitystudent">
+	    <option value="true">yes</option>
+	    <option value="false">no</option>
+	</select>
+</p>
+
+
+<p>
+<label><b>institution</b></label>
+<input class="w3-input w3-border w3-round" name="eduinstitution" type="text">
+</p>
+
+
+<h3>New User Data</h3>
+
+
+<p>
+<label><b>username</b></label>
+<input class="w3-input w3-border w3-round" name="username" type="text">
+</p>
+
+<p>
+<label><b>password</b></label>
+<input class="w3-input w3-border w3-round" name="password" type="text">
+</p>
+
+<p>
+<button>Add User</button>
+</p>
+
+<a th:href="@{/}">Home</a>
+
+</form>
+<!-- </div> -->
+</body>
+</html>

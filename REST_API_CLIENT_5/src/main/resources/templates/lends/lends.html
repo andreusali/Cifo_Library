@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Reservation</title>
+</head>
+<h3>Reservations</h3>
+<table>
+<thead>
+<tr class="w3-blue">
+<th>Reservation Id</th>
+<!-- <th>User's Id</th> -->
+<!-- <th>User's Name</th> -->
+<!-- <th>User's Country</th> -->
+<!-- <th>User's Date of Birth</th> -->
+<!-- <th>User's CardId</th> -->
+<!-- <th>User's Frontphoto</th> -->
+<!-- <th>User's Card Color</th> -->
+
+</tr>
+</thead>
+<tr th:each="lend:${lends}">
+<td th:text="${lend.id}"></td>
+<!-- <td th:text="${lend.user.id}"></td> -->
+<!-- <td th:text="${lend.user.name}"></td> -->
+<!-- <td th:text="${lend.user.countryoforigin}"></td> -->
+<!-- <td th:text="${lend.user.dateofbirth}"></td> -->
+<!-- <td th:text="${lend.user.card.id}"></td> -->
+<!-- <td th:text="${lend.user.card.frontphoto}"></td> -->
+<!-- <td th:text="${lend.user.card.color}"></td> -->
+
+<td><a th:href="@{deleteLend(id=${lend.id})}" >DELETE</a></td>
+
+</tr>
+</table>
+<form action="newLend">
+<p>
+<button >Add Lend</button>
+</p>
+</form>
+
+
+</body>
+</html>

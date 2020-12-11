@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" -->
+<!--       layout:decorate="~{/home/layout}"> -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Authors</title>
+</head>
+<body>
+<!-- <div layout:fragment="content"> -->
+
+<div class="w3-container w3-teal">
+<h3>Authors</h3>
+</div>
+
+<table class="w3-table-all w3-hoverable">
+<thead>
+<tr >
+<th>Name</th>
+<th>Country</th>
+<th>Date of birth</th>
+<th>Publisher</th>
+</tr>
+</thead>
+<tr th:each="author:${authors}">
+<td th:text="${author.name}"></td>
+<td th:text="${author.countryoforigin}"></td>
+<td th:text="${author.dateofbirth}"></td>
+<td th:text="${author.publisher}"></td>
+<td><a th:href="@{deleteAuthor(id=${author.id})}" >DELETE</a></td>
+
+</tr>
+</table>
+<form action="newAuthor">
+<p>
+
+<button >Add Author</button>
+</p>
+</form>
+
+<!-- </div> -->
+</body>
+</html>
+

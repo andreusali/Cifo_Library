@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Library</title>
+</head>
+<body>
+
+<div class="w3-container w3-teal">
+	<h3 align="center">Session</h3>
+</div>
+	<Br>
+	<Br>
+	<Br>
+
+	<table align="center">
+		<tr>
+			<td >Session id:</td>
+			<td th:text="${session.sid}"></td>
+		</tr>
+	</table>
+
+
+	<p align="center" th:text="${serverTime}"></p>
+
+	<table align="center">
+	
+	<tr>
+		<td>Customer:</td>
+		<td th:text="${session.user.name}"></td>
+		
+	</tr>
+	<tr>
+	
+		<td>Status:</td>
+	
+		<td th:text="${session.status}"></td>
+		
+	</tr>	
+
+	</table>
+	<Br><Br><Br><Br><Br><Br><Br><Br><Br>
+	
+	<div align="center">
+		<table>
+			<tr>
+
+				<td><a th:href="@{/books/library}">Book List</a></td>
+				<td><a th:href="@{/books/newBook}">Add Book</a></td>
+				<td><a th:href="@{/authors/authors}">Author List</a></td>
+				<td><a th:href="@{/authors/newAuthor}">Add Author</a></td>
+				<td><a th:href="@{/carts/showAllBooks}">Book Cart</a></td>
+<!-- 				<td><a th:href="@{/creditcards/addCreditCard}">Add Card</a></td> -->
+				<td><a th:href="@{/users/newUser}">Add User</a></td>
+<!-- 				<td><a th:href="@{/creditcards/show}">List of Cards</a></td> -->
+				<td><a th:href="@{/users/showUsers}">List of users</a></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

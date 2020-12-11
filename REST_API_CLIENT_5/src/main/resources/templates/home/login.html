@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" -->
+<!--       layout:decorate="~{home/layout}"> -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Library</title>
+</head>
+<body>
+<!-- <div layout:fragment="content"> -->
+
+<div class="w3-container w3-teal">
+	<h3 align="center">Log in</h3>
+</div>
+	<Br>
+	<Br>
+	<Br>
+
+	<table align="center">
+		<tr>
+			<td >Session id:</td>
+			<td th:text="${session.sid}"></td>
+		</tr>
+	</table>
+
+
+	<p align="center" th:text="${serverTime}"></p>
+
+
+ 
+<form th:action="@{/loginUser}" th:object="${user}" method="post">
+
+		<div align="center" th:object="${user}">
+			<label>Select User: </label><select id="selectCustomer" name="id">
+				<option th:value="0">No user</option>
+				<option th:each="client : ${users}" th:value="${client.id}" th:text="${client.id}+' : '+${client.name}"></option>
+			</select>
+		</div>
+
+		<p>
+		<div align="center">		
+		<label>Password: <input type="password" name="password"/> </label>
+		</div>
+	
+
+		<div align="center">
+				<p>
+			<button type="submit">Get in</button>
+			</p>
+		</div>
+		
+
+	</form>
+	<Br><Br><Br><Br><Br><Br><Br><Br><Br>
+	
+	<div align="center">
+		<table>
+			<tr>
+<!-- 				<td><a th:href="@{/books/library}">Book List</a></td> -->
+<!-- 				<td><a th:href="@{/books/newBook}">Add Book</a></td> -->
+<!-- 				<td><a th:href="@{/authors/authors}">Author List</a></td> -->
+<!-- 				<td><a th:href="@{/authors/newAuthor}">Add Author</a></td> -->
+<!-- 				<td><a th:href="@{/carts/showAllBooks}">Book Cart</a></td> -->
+				<td><a th:href="@{/users/newUser}">Add User</a></td>
+<!-- 				<td><a th:href="@{/users/showUsers}">List of users</a></td> -->
+			</tr>
+		</table>
+	</div>
+	
+<!-- </div>	 -->
+</body>
+</html>

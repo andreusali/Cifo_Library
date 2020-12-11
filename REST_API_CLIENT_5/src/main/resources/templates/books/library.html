@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" -->
+<!--       layout:decorate="~{/home/layout}"> -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Books</title>
+</head>
+<body>
+<!-- <div layout:fragment="content"> -->
+
+<div class="w3-container w3-teal">
+<h3>Books</h3>
+</div>
+
+<table class="w3-table-all w3-hoverable">
+<thead>
+<tr>
+<th>Number</th>
+<th>Title</th>
+<th>Isbn</th>
+<th>Pages</th>
+</tr>
+</thead>
+<tr th:each="pub:${books}">
+<td th:text="${pub.id}"></td>
+<td th:text="${pub.title}"></td>
+<td th:text="${pub.isbn}"></td>
+<td th:text="${pub.numberpages}"></td>
+<!-- <td th:text="${pub.author.name}"></td> -->
+
+<td><a th:href="@{deleteBook(id=${pub.id})}" >DELETE</a></td>
+
+</tr>
+</table>
+<form action="newBook">
+<p>
+<button >Add Book</button>
+</p>
+</form>
+
+<!-- </div> -->
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<head>
+<meta charset="ISO-8859-1">
+<title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE"></title>
+</head>
+
+
+<div class="w3-container">
+	
+		<div class="w3-bar w3-border w3-grey">
+
+			<a th:href="@{/}" class="w3-bar-item w3-button w3-mobile">Home</a>
+			<a	th:href="@{/users/showUsers}" class="w3-bar-item w3-button w3-mobile">Users</a>
+			<a	th:href="@{/users/newUser}" class="w3-bar-item w3-button w3-mobile">New User</a>
+			<a th:href="@{/authors/authors}" class="w3-bar-item w3-button w3-mobile">Authors</a>
+			<a th:href="@{/authors/newAuthor}" class="w3-bar-item w3-button w3-mobile">New Author</a>
+			<a th:href="@{/books/library}" class="w3-bar-item w3-button w3-mobile">Books</a>
+			<a th:href="@{/books/newBook}" class="w3-bar-item w3-button w3-mobile">New Book</a>
+			
+		</div>
+</div>
+	
+	
+</head>
+<body>

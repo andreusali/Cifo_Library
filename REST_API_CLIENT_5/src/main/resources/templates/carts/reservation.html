@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" -->
+<!--       layout:decorate="~{/home/layout}"> -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Cart</title>
+</head>
+<body>
+
+<div class="w3-container w3-teal">
+<h3>Cart List</h3>
+</div>
+
+<table >
+
+<tr>
+	<td>Session id:</td>
+	<td th:text="${session.sid}">
+	</td>
+</tr>
+
+<tr>
+	<td>User:</td>
+	<td th:text="${session.user.name}"></td>
+</tr>
+<tr>
+	<td>Status:</td>
+	<td th:text="${session.status}"></td>
+</tr>
+
+</table >
+<br>
+<table class="w3-table-all w3-hoverable">
+<tr>
+<th>Book Id</th>
+<th>Title</th>
+<th>Isbn</th>
+<th>Number of Pages</th>
+<th>Quantity</th>
+</tr>
+
+	<tr th:each="itemAmount:${session.cart}" th:unless="${session==null}">
+	<td th:text="${itemAmount.book.id}"></td>
+	<td th:text="${itemAmount.book.title}"></td>
+	<td th:text="${itemAmount.book.isbn}"></td>
+	<td th:text="${itemAmount.book.numberpages}"></td>
+	<td th:text="${itemAmount.quantity}"></td>
+	</tr>
+
+</table>
+	<a th:href="@{/reservation/reserved}">Reservation done</a>
+</body>
+</html>
